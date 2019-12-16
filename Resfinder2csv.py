@@ -1,4 +1,4 @@
-#resfinder×ªcsv
+#resfinderè½¬csv
 import os 
 from collections import OrderedDict
 import csv
@@ -6,18 +6,17 @@ import sys
 
 forall = OrderedDict()
 
-yourdir = sys.argv[1] + "/"#input("dir:")#Êä³öÎÄ¼ş¼ĞÃû×Ö
-mylist = os.listdir(yourdir)#ÅúÁ¿¶ÁÈ¡ÎÄ¼şÃû
+yourdir = sys.argv[1] + "/"#input("dir:")#è¾“å‡ºæ–‡ä»¶å¤¹åå­—
+mylist = os.listdir(yourdir)#æ‰¹é‡è¯»å–æ–‡ä»¶å
 
-#ÌáÈ¡º¯Êı
 def select(file):
     for c in file.readlines():
         #c = c.strip()
-        if len(c) > 70:
+        if len(c) > 70 and len(c) < 135:
             if c.find("No hit found")  == -1:
                 if c.find("run_info")  == -1:
-                    if c[70] != " ":
-                        c = c.strip()
+                    if c.find("HSP_length") != -1:
+                        c = c.strip(":")
                         c = c.replace("{","")
                         c = c.replace("'","")
                         c = c.replace('"',"")
@@ -27,15 +26,16 @@ def select(file):
                         last = c[-1]
                         forall[i].append(last)
     print("i")
-#ÅĞ¶Ï´æÔÚº¯Êı
+#åˆ¤æ–­å­˜åœ¨å‡½æ•°
 def exist():
+    temp = 0
     for k in forall[i]:
         if j == k:
             temp = 1
             break
         else:temp = 0
     return temp
-            
+
 for i in mylist:
     file=open(yourdir+i,'r')
     forall[i] =[]
