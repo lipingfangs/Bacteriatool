@@ -6,3 +6,5 @@ you can use it to manage the data created by resfinder.py(https://bitbucket.org/
 you can use it to manage the data created by toxicity database :VFDB by blast2.7(default output) to build a csv matrix about the presence of drug toxicity genes in different individuals by VFDB2csv.py.
 
 you can use it to extract the information like "organism","isolation_source","host","country","lat_lon","collection_date","sample_name" of GBK(GCA) file form NCBI and create a csv matrix of your information by GBKinf2csv.py. 
+___
+You use the script by commanding python Resfinder2csv.py /VFDB2csv.py /GBKinf2csv.py <Input_dir>
