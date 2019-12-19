@@ -1,4 +1,4 @@
-#vfdb×ªcsv
+#vfdbè½¬csv
 import os 
 from collections import OrderedDict
 import csv
@@ -6,8 +6,8 @@ import sys
 
 forall = OrderedDict()
 
-yourdir = sys.argv[1] + "/"#input("dir:")#Êä³öÎÄ¼ş¼ĞÃû×Ö
-mylist = os.listdir(yourdir)#ÅúÁ¿¶ÁÈ¡ÎÄ¼şÃû
+yourdir = sys.argv[1] + "/"#input("dir:")#è¾“å‡ºæ–‡ä»¶å¤¹åå­—
+mylist = os.listdir(yourdir)#æ‰¹é‡è¯»å–æ–‡ä»¶å
 
 def select(file,name):
     forall[name] = []
@@ -19,7 +19,7 @@ def select(file,name):
             forall[name].append(temp1)
     print("i")
 
-            #ÅĞ¶Ï´æÔÚº¯Êı
+            #åˆ¤æ–­å­˜åœ¨å‡½æ•°
 def exist():
     for k in forall[i]:
         if j == k:
@@ -35,10 +35,11 @@ for i in mylist:
     #print(c)
     #print(i)
     file.close()
-
+    
+forall_name = []
 for i in forall.keys():
-    forall_name = []
     forall_name.append(i)
+    
 outgo = forall[forall_name[0]]
 for j in range(len(forall_name)):
     outgo = list(set(outgo).union(forall[forall_name[j]]))
