@@ -12,7 +12,7 @@ mylist = os.listdir(yourdir)#批量读取文件名
 def select(file):
     for c in file.readlines():
         #c = c.strip()
-        if len(c) > 70 and len(c) < 135:
+        if len(c) > 70 and len(c) < 170:
             if c.find("No hit found")  == -1:
                 if c.find("run_info")  == -1:
                     if c.find("HSP_length") != -1:
@@ -42,10 +42,11 @@ for i in mylist:
     select(file)
     #print(forall)
     file.close()
-
+    
+forall_name = []
 for i in forall.keys():
-    forall_name = []
     forall_name.append(i)
+    
 outgo = forall[forall_name[0]]
 for j in range(len(forall_name)):
     outgo = list(set(outgo).union(forall[forall_name[j]]))
